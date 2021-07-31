@@ -1,10 +1,132 @@
-# NestJs
->## Dudas:
-- [Don't use 'object' as a type. The 'object' type is currently hard to use](https://stackoverflow.com/questions/65856701/dont-use-object-as-a-type-the-object-type-is-currently-hard-to-use)
+# **CRUD en NestJs**
 
-## Description
+## **Descripción:**
+<p style="text-align:justify">API de practica hecha con NestJs, en donde se manipula un archivo txt mediante la librería de node FileStream.</p>
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## **Rutas**
+
+### *getData()*
+Retorna todo los datos del archivo txt.
+
+* **URL**
+
+  /crud/api/data
+
+* **Method:**
+
+  `GET`
+  
+*  **URL Params**
+
+   None
+
+* **Body**
+
+  None
+ 
+* **Error Response:**
+
+    **Content:** `{ ErrorMsg: 'Failed' }`
+
+### *getDataById()*
+Retorna un objeto según su Id.
+
+* **URL**
+
+  /crud/api/element/:id
+
+* **Method:**
+
+  `GET`
+  
+*  **URL Params**
+
+   **Required:**
+ 
+   `id=[string]`
+
+* **Body**
+
+  None
+ 
+* **Error Response:**
+
+    **Content:** `{ ErrorMsg: 'Failed' }`
+
+### *addNewData()*
+Agrega un objeto al array que se encuentra en el archivo txt, retorna todos los datos del archivo.
+
+* **URL**
+
+  /crud/api/add
+
+* **Method:**
+
+  `POST`
+  
+*  **URL Params**
+ 
+   `none`
+
+* **Body**
+
+    `{data:[]}`
+ 
+* **Error Response:**
+
+    **Content:** `{ ErrorMsg: 'Failed' }`
+
+### *modifyDataById()*
+Modifíca un objeto según su Id en el array que se encuentra en el archivo txt, retorna el objeto modificado.
+
+* **URL**
+
+  /crud/api/modify/:id
+
+* **Method:**
+
+  `PUT`
+  
+*  **URL Params**
+
+   **Required:**
+ 
+   `id=[string]`
+
+* **Body**
+
+    `{data:[]}`
+ 
+* **Error Response:**
+
+    **Content:** `{ ErrorMsg: 'Failed' }`
+
+### *deleteElementById()*
+Elimina un objeto según su Id en el array que se encuentra en el archivo txt, retorna todos los datos del archivo txt.
+
+* **URL**
+
+  /crud/api/delete/:id
+
+* **Method:**
+
+  `GET`
+  
+*  **URL Params**
+
+   **Required:**
+ 
+   `id=[string]`
+
+* **Body**
+
+  None
+ 
+* **Error Response:**
+
+    **Content:** `{ ErrorMsg: 'Failed' }`
+
+<hr/>
 
 ## Installation
 
@@ -37,17 +159,3 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
